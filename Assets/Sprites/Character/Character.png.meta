@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: 7a0244ff4a32e8c478eb7d54850c3a75
+timeCreated: 1433735626
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: ear_L
+    21300002: ear_R
+    21300004: parachute
+    21300006: eye_R
+    21300008: foot_L
+    21300010: necktie
+    21300012: hand_R
+    21300014: hand_L
+    21300016: body
+    21300018: foot_R
+    21300020: nose
+    21300022: tail
+    21300024: eye_L
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: ear_L
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 366
+        width: 76
+        height: 115
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ear_R
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 370
+        width: 89
+        height: 103
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: parachute
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 180
+        width: 259
+        height: 291
+      alignment: 9
+      pivot: {x: .504980743, y: .00252802996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eye_R
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 292
+        width: 39
+        height: 25
+      alignment: 9
+      pivot: {x: .0909889415, y: .175563961}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: foot_L
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 227
+        width: 19
+        height: 27
+      alignment: 9
+      pivot: {x: .856108427, y: .705845594}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: necktie
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 237
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hand_R
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 210
+        width: 22
+        height: 19
+      alignment: 9
+      pivot: {x: .115564518, y: .665336192}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: hand_L
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 143
+        width: 27
+        height: 18
+      alignment: 9
+      pivot: {x: .822474599, y: .544260681}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: body
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 135
+        width: 49
+        height: 70
+      alignment: 9
+      pivot: {x: .535935521, y: .969814003}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: foot_R
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 68
+        width: 22
+        height: 34
+      alignment: 9
+      pivot: {x: .271994859, y: .622943878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: nose
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 93
+        width: 182
+        height: 50
+      alignment: 9
+      pivot: {x: .0262285173, y: .0830476359}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tail
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 69
+        width: 14
+        height: 13
+      alignment: 9
+      pivot: {x: .726960838, y: .763222337}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: eye_L
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 275
+        width: 27
+        height: 49
+      alignment: 9
+      pivot: {x: .800403714, y: .0530725606}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
