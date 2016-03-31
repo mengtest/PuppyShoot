@@ -407,80 +407,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 170828, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8291964, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: panLevelCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8291964, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21260126, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21260520, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21286850, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21251862, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21209626, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21283928, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21260126, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 21285612, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21234546, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21203704, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21258268, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21211574, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21283928, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 21286850, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 21210128, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21210128, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_SortingOrder
+    - target: {fileID: 11449128, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

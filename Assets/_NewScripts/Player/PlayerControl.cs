@@ -17,8 +17,9 @@ public class PlayerControl : MonoBehaviour
             
             if (hit.collider.CompareTag(Tags.Enemy))
             {
-                this.gameObject.PostNotification(Notifications.SHOOT_ENEMY,
-                    new InfoEventArgs<Vector3>(hit.collider.transform.position));
+                //this.gameObject.PostNotification(Notifications.SHOOT_ENEMY,
+                //    new InfoEventArgs<Vector3>(hit.collider.transform.position));
+                this.gameObject.GetComponent<PlayerRocketMaker>().SetEnemy(hit.collider.gameObject);
             }
         }
     }
