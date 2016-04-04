@@ -324,6 +324,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 21257888, guid: 697948b32b1ca7947a27bfd7831fa78a, type: 2}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 697948b32b1ca7947a27bfd7831fa78a, type: 2}
   m_IsPrefabParent: 0
@@ -407,10 +411,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11449128, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
   m_IsPrefabParent: 0
@@ -450,9 +450,13 @@ MonoBehaviour:
     prefab: {fileID: 174668, guid: 16c16cbd85707064fb5f252fbd8ec3d2, type: 2}
     prepolulate: 10
     maxCount: 15
+  - key: ExplosionEffect
+    prefab: {fileID: 100000, guid: 5b8d8461f4d094ae1911a6d9df6d9f68, type: 2}
+    prepolulate: 10
+    maxCount: 15
   pooledObjectInfo:
-    key: Bullets
-    prefab: {fileID: 174668, guid: 16c16cbd85707064fb5f252fbd8ec3d2, type: 2}
+    key: ExplosionEffect
+    prefab: {fileID: 100000, guid: 5b8d8461f4d094ae1911a6d9df6d9f68, type: 2}
     prepolulate: 10
     maxCount: 15
 --- !u!4 &1809953694

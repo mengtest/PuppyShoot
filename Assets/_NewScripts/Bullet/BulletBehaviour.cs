@@ -47,13 +47,13 @@ public class BulletBehaviour : MonoBehaviour {
     {
         if(m_bIsStart)
         {
-            m_vMoveDir = CalMoveDir(m_vTargetPosition);
+            m_vMoveDir = CalcMoveDir(m_vTargetPosition);
             this.transform.LookAt(m_vTargetPosition);
             GetComponent<Rigidbody2D>().velocity = m_vMoveDir * speed * Time.deltaTime;
         }
     }
 
-    Vector3 CalMoveDir(Vector3 targetPosition)
+    Vector3 CalcMoveDir(Vector3 targetPosition)
     {
         return (targetPosition - this.transform.position).normalized;
     }
@@ -62,4 +62,19 @@ public class BulletBehaviour : MonoBehaviour {
     {
         this.transform.position = position;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag(Tags.Enemy))
+        {
+            OnDestroyBullet();
+        }
+    }
+
+    void OnDestroyBullet()
+    {
+        //入池
+        ObjectPooler.Enqueue(this.GetComponent<Poolable>());
+    }
+
 }
