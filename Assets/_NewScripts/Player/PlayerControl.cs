@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
-using UnityEditor.AnimatedValues;
 
 public class PlayerControl : MonoBehaviour
 {

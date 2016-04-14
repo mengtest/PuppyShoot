@@ -5,7 +5,7 @@ public class EnemyStatus : MonoBehaviour {
 
     public int m_nEnemyHealth = 1;
     public AudioClip m_ExploreSound;
-    
+    public int m_EnemyScore = 100;
 
 
     private GameObject player;
@@ -54,7 +54,9 @@ public class EnemyStatus : MonoBehaviour {
         m_exploreEffect.gameObject.GetComponent<ParticleSystem>().Play();
         //延迟特效入池
         m_exploreEffect.gameObject.GetComponentInParent<ExplosionEffect>().DelayEnqueue();
-        
+
+        //增加得分(给UI)
+        this.PostNotification(Notifications.ADD_SCORE, new InfoEventArgs<int>(m_EnemyScore));
     }
 
 

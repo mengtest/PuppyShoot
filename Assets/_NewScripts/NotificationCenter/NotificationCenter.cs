@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class NotificationCenter 
 {
-    public readonly static NotificationCenter Instance=new NotificationCenter();
+    public readonly static NotificationCenter Instance = new NotificationCenter();
     private Dictionary<string,EventHandler> _eventTable=new Dictionary<string, EventHandler>();
     
     private NotificationCenter() { }
