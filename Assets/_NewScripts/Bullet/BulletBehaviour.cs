@@ -32,7 +32,7 @@ public class BulletBehaviour : MonoBehaviour {
         m_eBulletOwner = eOwner;
     }
 
-    BulletOwner GetBulletOwner()
+    public BulletOwner GetBulletOwner()
     {
         return m_eBulletOwner;
     }
@@ -48,7 +48,8 @@ public class BulletBehaviour : MonoBehaviour {
         if(m_bIsStart)
         {
             m_vMoveDir = CalcMoveDir(m_vTargetPosition);
-            this.transform.LookAt(m_vTargetPosition);
+            Debug.Log(m_vMoveDir);
+            this.transform.LookAt(m_vTargetPosition);//这个函数有毒,每次LookAt后下次的velocity就会改变方向,我总算是知道了
             GetComponent<Rigidbody2D>().velocity = m_vMoveDir * speed * Time.deltaTime;
         }
     }
@@ -65,10 +66,16 @@ public class BulletBehaviour : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag(Tags.Enemy))
+        if(other.gameObject.CompareTag(Tags.Enemy) && !this.CompareTag(Tags.EnemyBullet))
         {
             OnDestroyBullet();
         }
+
+        if (other.gameObject.CompareTag(Tags.Player) && !this.CompareTag(Tags.Bullet))
+        {
+            OnDestroyBullet();
+        }
+
     }
 
     void OnDestroyBullet()

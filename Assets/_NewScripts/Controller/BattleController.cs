@@ -4,39 +4,37 @@ using System.Collections;
 
 public class BattleController: MonoBehaviour
 {
-    private Coroutine MoveCoroutine = null;
+    //private Coroutine MoveCoroutine = null;
 
     void Awake()
     {
-        this.AddObserver(Notifications.PLAYER_MOVE, PlayerMove);
+        //this.AddObserver(Notifications.PLAYER_MOVE, PlayerMove);
         this.AddObserver(Notifications.SHOOT_ENEMY,ShootEnemy);
-        this.AddObserver(Notifications.UPDATE_SCORE,UpdateScore);
     }
 
     
     void OnDestroy()
     {
-        this.RemoveObserver(Notifications.PLAYER_MOVE);
+        //this.RemoveObserver(Notifications.PLAYER_MOVE);
         this.RemoveObserver(Notifications.SHOOT_ENEMY);
-        this.RemoveObserver(Notifications.UPDATE_SCORE);
     }
 
 
-    void PlayerMove(object sender, EventArgs e)
-    {
-        if (MoveCoroutine != null)
-        {
-            StopCoroutine(MoveCoroutine);
-        }
+    //void PlayerMove(object sender, EventArgs e)
+    //{
+    //    if (MoveCoroutine != null)
+    //    {
+    //        StopCoroutine(MoveCoroutine);
+    //    }
 
-        GameObject player = sender as GameObject;
+    //    GameObject player = sender as GameObject;
 
-        InfoEventArgs<Vector3> pointEvent = (InfoEventArgs<Vector3>)e;
+    //    InfoEventArgs<Vector3> pointEvent = (InfoEventArgs<Vector3>)e;
 
-        Vector3 target = pointEvent.info;
+    //    Vector3 target = pointEvent.info;
 
-        MoveCoroutine = StartCoroutine(MoveTo(player, target));
-    }
+    //    MoveCoroutine = StartCoroutine(MoveTo(player, target));
+    //}
 
 
     void ShootEnemy(object sender, EventArgs e)
@@ -65,12 +63,5 @@ public class BattleController: MonoBehaviour
         
     }
 
-    IEnumerator MoveTo(GameObject player,Vector3 target)
-    {
-        while (Vector3.Distance(player.transform.position, target)>Mathf.Epsilon)
-        {
-            player.transform.position = Vector3.MoveTowards(player.transform.position, target, 3.0f*Time.deltaTime);
-            yield return 0;
-        }
-    }
+    
 }

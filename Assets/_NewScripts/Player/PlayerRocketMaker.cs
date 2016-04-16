@@ -5,7 +5,6 @@ public class PlayerRocketMaker : MonoBehaviour {
 
     private bool m_bStartFire = false;
 
-    private GameObject rocket;
     private GameObject enemy;
     private Poolable bulletPoolableObj;
 
@@ -29,7 +28,8 @@ public class PlayerRocketMaker : MonoBehaviour {
             m_bStartFire = false;
             bulletPoolableObj = ObjectPooler.Dequeue(PoolKeys.Bullets);
             BulletBehaviour rocketBehaviour = bulletPoolableObj.GetComponent<BulletBehaviour>();
-            rocketBehaviour.SetBulletOwner(BulletBehaviour.BulletOwner.PLAYER);
+            //rocketBehaviour.SetBulletOwner(BulletBehaviour.BulletOwner.PLAYER);
+            rocketBehaviour.tag = Tags.Bullet;
             rocketBehaviour.SetBulletPosition(this.gameObject.transform.position);
             rocketBehaviour.gameObject.SetActive(true);
             rocketBehaviour.SetTargetPosition(enemy.transform.position);
