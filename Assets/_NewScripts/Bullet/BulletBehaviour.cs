@@ -10,6 +10,7 @@ public class BulletBehaviour : MonoBehaviour {
     }
 
     public float speed = 50.0f;
+    public float m_DisappearDistance = 20.0f;
     private BulletOwner m_eBulletOwner;
     private bool m_bIsStart = false;
     private Vector3 m_vTargetPosition;
@@ -24,8 +25,10 @@ public class BulletBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+        OnOverDistance();
         Firing();
 	}
+
 
     public void SetBulletOwner(BulletOwner eOwner)
     {
@@ -40,6 +43,8 @@ public class BulletBehaviour : MonoBehaviour {
     public void SetTargetPosition(Vector3 targetPosition)
     {
         m_vTargetPosition = targetPosition;
+        m_vMoveDir = CalcMoveDir(m_vTargetPosition);
+        this.transform.LookAt(m_vTargetPosition);//放到这里就好了
         m_bIsStart = true;
     }
 
@@ -47,9 +52,8 @@ public class BulletBehaviour : MonoBehaviour {
     {
         if(m_bIsStart)
         {
-            m_vMoveDir = CalcMoveDir(m_vTargetPosition);
-            Debug.Log(m_vMoveDir);
-            this.transform.LookAt(m_vTargetPosition);//这个函数有毒,每次LookAt后下次的velocity就会改变方向,我总算是知道了
+            //m_vMoveDir = CalcMoveDir(m_vTargetPosition);//这个东西也不能每一帧调用
+            //this.transform.LookAt(m_vTargetPosition);//这个函数有毒,每次LookAt后下次的velocity就会改变方向,我总算是知道了
             GetComponent<Rigidbody2D>().velocity = m_vMoveDir * speed * Time.deltaTime;
         }
     }
@@ -82,6 +86,15 @@ public class BulletBehaviour : MonoBehaviour {
     {
         //入池
         ObjectPooler.Enqueue(this.GetComponent<Poolable>());
+    }
+
+    void OnOverDistance()
+    {
+        float distance = Vector3.Distance(this.transform.position, m_vTargetPosition);
+        if(distance > m_DisappearDistance)
+        {
+            OnDestroyBullet();
+        }
     }
 
 }

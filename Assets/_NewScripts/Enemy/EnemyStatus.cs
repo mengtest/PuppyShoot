@@ -5,8 +5,6 @@ public class EnemyStatus : MonoBehaviour {
 
 
     public float breakingDistance = 20.0f;
-
-
     public int m_nEnemyHealth = 1;
     public AudioClip m_ExploreSound;
     public int m_EnemyScore = 100;
@@ -31,6 +29,20 @@ public class EnemyStatus : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag(Tags.Player);
         enemyState = State.ATTACK;
 	}
+
+
+    void OnEnable()//从对象池取出SetActive(true)调用
+    {
+
+    }
+
+    void OnDisable()
+    {
+        //入池后怪物状态还原避免影响下次Dequeue后状态异常
+        enemyState = State.ATTACK;
+        m_nEnemyHealth = 1;
+    }
+   
 	
     void Update()
     {
@@ -99,7 +111,6 @@ public class EnemyStatus : MonoBehaviour {
         if(enemyState == State.ATTACK)
         {
             float distance = Vector3.Distance(player.transform.position, transform.position);
-            Debug.Log(distance);
             if(distance > breakingDistance)
             {
                 enemyState = State.DISAPPEAR;
@@ -111,4 +122,6 @@ public class EnemyStatus : MonoBehaviour {
     {
         return State.ATTACK == enemyState;
     }
+
+   
 }

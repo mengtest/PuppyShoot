@@ -14,6 +14,18 @@ public class ShotMaker : MonoBehaviour
     private bool isFiring = false;
     private bool isMakingBullet = false;
 
+    void OnEnable()
+    {
+        isFiring = false;
+        isMakingBullet = false;
+    }
+
+    void OnDisable()
+    {
+        isFiring = false;
+        isMakingBullet = false;
+    }
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(Tags.Player);
@@ -60,6 +72,11 @@ public class ShotMaker : MonoBehaviour
     {
         fireCount = 0;
         this.isFiring = true;
+    }
+
+    public void StopFiring()
+    {
+        this.isFiring = false;
     }
 
     public bool GetIsFiring()
