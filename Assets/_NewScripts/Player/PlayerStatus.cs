@@ -77,6 +77,7 @@ public class PlayerStatus : MonoBehaviour {
 
     private void OnPlayerDie()
     {
+        this.gameObject.SetActive(false);
         m_bIsGameOver = true;
     }
 

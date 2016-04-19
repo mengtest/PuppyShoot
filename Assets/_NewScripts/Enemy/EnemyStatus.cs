@@ -82,8 +82,6 @@ public class EnemyStatus : MonoBehaviour {
             //播放爆炸声音
             AudioSource.PlayClipAtPoint(m_ExploreSound, this.gameObject.transform.position, 1.0f);
 
-            //该敌人对象入池
-            ObjectPooler.Enqueue(this.GetComponent<Poolable>());
 
             //从对象池获取爆炸特效
             m_exploreEffect = ObjectPooler.Dequeue(PoolKeys.ExplosionEffect).gameObject;
@@ -95,6 +93,10 @@ public class EnemyStatus : MonoBehaviour {
 
             //增加得分(给UI)
             this.PostNotification(Notifications.ADD_SCORE, new InfoEventArgs<int>(m_EnemyScore));
+
+            //该敌人对象入池
+            ObjectPooler.Enqueue(this.GetComponent<Poolable>());
+
         }
 
         if(State.DISAPPEAR == enemyState)
