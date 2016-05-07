@@ -110,6 +110,11 @@ public class EnemyStatus : MonoBehaviour {
 
     private void IsOverTheDistance()
     {
+        if(!player)
+        {
+            return;
+        }
+
         if(enemyState == State.ATTACK)
         {
             float distance = Vector3.Distance(player.transform.position, transform.position);

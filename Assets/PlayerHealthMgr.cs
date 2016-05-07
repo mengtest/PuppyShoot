@@ -65,7 +65,5 @@ public class PlayerHealthMgr : MonoBehaviour {
         {
             m_listHeartIcons[i].gameObject.SetActive(true);
         }
-
-        
     }
 }

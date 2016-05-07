@@ -3,7 +3,6 @@ using System.Collections;
 
 public class BackgroundController : MonoBehaviour
 {
-
     [SerializeField] private GameObject main_camera;
     
     public static float WIDTH = 19.2f;
@@ -27,9 +26,5 @@ public class BackgroundController : MonoBehaviour
             bg_position.x -= total_width;
             this.transform.position = bg_position;
         }
-
-
     }
-
-
 }

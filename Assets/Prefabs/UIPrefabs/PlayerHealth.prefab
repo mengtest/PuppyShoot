@@ -56,17 +56,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101242}
-  m_LocalRotation: {x: 0, y: 0, z: 0.00034526698, w: 0.99999994}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.058562502, y: 0.86519015}
-  m_AnchorMax: {x: 0.097, y: 0.9265951}
-  m_AnchoredPosition: {x: -520.89624, y: 275.1664}
-  m_SizeDelta: {x: 45.356262, y: 39.60798}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.13571872, y: 0.83583593}
+  m_AnchorMax: {x: 0.18400002, y: 0.94646084}
+  m_AnchoredPosition: {x: -0.5, y: 2.5}
+  m_SizeDelta: {x: 2, y: 4}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

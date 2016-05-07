@@ -2,5 +2,7 @@
 {
     public const string EasyEnemys = "EasyEnemy";
     public const string Bullets = "Bullets";
+    public const string Missile = "Missile";
+    public const string Bomb = "Bomb";
     public const string ExplosionEffect = "ExplosionEffect";
 }

@@ -8,6 +8,7 @@ public class ShotMaker : MonoBehaviour
     public int numberOfBullets = 10;
     
     private GameObject player;
+    private PlayerStatus playerStatus;
     private Poolable shotPoolableObj;
 
     private int fireCount;
@@ -29,20 +30,23 @@ public class ShotMaker : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag(Tags.Player);
+        if(player)
+        playerStatus = player.GetComponent<PlayerStatus>();
 
     }
 
     void Update()
     {
-        if(isFiring)
+        if (isFiring && playerStatus.GetIsNOWPLAYING())
         {
-           if(!isMakingBullet)
-           {
-               isMakingBullet = true;
-               MakeBullet();
-           }
+            if (!isMakingBullet)
+            {
+                isMakingBullet = true;
+                MakeBullet();
+            }
         }
     }
+
 
     private void MakeBullet()
     {

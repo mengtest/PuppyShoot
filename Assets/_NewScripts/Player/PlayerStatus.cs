@@ -49,7 +49,7 @@ public class PlayerStatus : MonoBehaviour {
         {
             if(other.CompareTag(Tags.EnemyBullet))
             {
-                //programState = State.PLAYERGETHURT;
+                programState = State.PLAYERGETHURT;
             }
         }
     }
@@ -67,7 +67,11 @@ public class PlayerStatus : MonoBehaviour {
 
     private void PlayerGetHurt()
     {
-        this.playerHealth--;
+        //this.playerHealth--;
+        if(playerHealth >= 0)
+        {
+            //this.PostNotification(Notifications.LOSE_HEALTH);
+        }
     }
 
     private bool IsPlayerDie()

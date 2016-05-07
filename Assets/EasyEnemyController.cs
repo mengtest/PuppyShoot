@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EasyEnemyController : MonoBehaviour 
 {
     private EnemyStatus m_enemyStatus;
     private GameObject player;
+    private EasyEnemyMaker easyEnemyMaker;
 
     public float startDistanceToShoot = 5.0f;
     public float endDistanceToShoot = 8.0f;
@@ -12,11 +14,13 @@ public class EasyEnemyController : MonoBehaviour
 
 
     public bool m_bCanShoot = false;
-    
+
+        
 	// Use this for initialization
 	void Awake () 
     {
         m_enemyStatus = this.GetComponent<EnemyStatus>();
+        easyEnemyMaker = GameObject.FindGameObjectWithTag(Tags.EasyEnemyMaker).GetComponent<EasyEnemyMaker>();
         player = GameObject.FindGameObjectWithTag(Tags.Player);
         SetCanShoot(true);
 	}
@@ -24,15 +28,16 @@ public class EasyEnemyController : MonoBehaviour
     void OnEnable()
     {
         //处理出生位置相关点
-        float playerAngleY = player.transform.rotation.eulerAngles.z;
-        float additionalAngle = (float)Random.Range(-45, 45);
-
-        // 方向を設定.
-        transform.rotation = Quaternion.Euler(0f, 0f, playerAngleY + additionalAngle);
-
-        // 位置を設定.
-        transform.position = new Vector3(0, 0, 0);
-        transform.position = player.transform.position + transform.right * distanceFromPlayerAtStart;
+        if(!player)
+        {
+            return;
+        }
+        // 初始化位置从Maker里面拿.
+        Vector3 spawnPos = easyEnemyMaker.GetSpawnPosition();
+        if(spawnPos != Vector3.zero)
+        {
+            transform.position = spawnPos;
+        }
     }
 
     void OnDisable()
@@ -42,19 +47,27 @@ public class EasyEnemyController : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update () 
+    void Update()
     {
-	    if(m_enemyStatus.GetIsAttack())
+        if (player)
         {
-            //移动相关逻辑ToDo
-
-            //射击相关逻辑
-            if(m_bCanShoot)
+            if (m_enemyStatus.GetIsAttack())
             {
-                IsFireDistace();
+                //移动相关逻辑ToDo
+
+                //射击相关逻辑
+                if (m_bCanShoot)
+                {
+                    IsFireDistace();
+                }
             }
         }
-	}
+        else
+        {
+            m_bCanShoot = false;
+
+        }
+    }
 
     void IsFireDistace()
     {

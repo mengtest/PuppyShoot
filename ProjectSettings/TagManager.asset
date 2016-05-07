@@ -9,6 +9,7 @@ TagManager:
   - Background
   - ExplosionFX
   - EnemyBullet
+  - EasyEnemyMaker
   layers:
   - Default
   - TransparentFX
