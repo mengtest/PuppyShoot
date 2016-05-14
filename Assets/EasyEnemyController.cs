@@ -20,7 +20,6 @@ public class EasyEnemyController : MonoBehaviour
 	void Awake () 
     {
         m_enemyStatus = this.GetComponent<EnemyStatus>();
-        easyEnemyMaker = GameObject.FindGameObjectWithTag(Tags.EasyEnemyMaker).GetComponent<EasyEnemyMaker>();
         player = GameObject.FindGameObjectWithTag(Tags.Player);
         SetCanShoot(true);
 	}
@@ -28,13 +27,13 @@ public class EasyEnemyController : MonoBehaviour
     void OnEnable()
     {
         //处理出生位置相关点
-        if(!player)
+        if(!player||!easyEnemyMaker)
         {
             return;
         }
         // 初始化位置从Maker里面拿.
         Vector3 spawnPos = easyEnemyMaker.GetSpawnPosition();
-        if(spawnPos != Vector3.zero)
+        if (spawnPos != Vector3.zero)
         {
             transform.position = spawnPos;
         }
@@ -97,5 +96,10 @@ public class EasyEnemyController : MonoBehaviour
     public void SetCanShoot(bool canShoot)
     {
         this.m_bCanShoot = canShoot;
+    }
+
+    public void SetEnemyMaker(EasyEnemyMaker maker)
+    {
+        this.easyEnemyMaker = maker;
     }
 }

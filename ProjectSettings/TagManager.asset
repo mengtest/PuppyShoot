@@ -10,6 +10,8 @@ TagManager:
   - ExplosionFX
   - EnemyBullet
   - EasyEnemyMaker
+  - CloudLightening
+  - Wall
   layers:
   - Default
   - TransparentFX

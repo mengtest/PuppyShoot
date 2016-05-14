@@ -75,7 +75,7 @@ public class ShotMaker : MonoBehaviour
     public void SetIsFiring()
     {
         fireCount = 0;
-        this.isFiring = true;
+        StartCoroutine(SetFireFlag());
     }
 
     public void StopFiring()
@@ -86,6 +86,12 @@ public class ShotMaker : MonoBehaviour
     public bool GetIsFiring()
     {
         return isFiring;
+    }
+
+    IEnumerator SetFireFlag()
+    {
+        yield return new WaitForSeconds(2.0f);
+        this.isFiring = true;
     }
 
 }

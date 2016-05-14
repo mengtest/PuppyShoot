@@ -437,7 +437,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: -0.21, y: 0.12}
   serializedVersion: 2
@@ -556,6 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f860938a705470e4a8c620ec4cd1f143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_moveSpeed: 2
 --- !u!114 &11475198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -567,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74091bf531c37445890cd912aee1a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRocketType: 0
 --- !u!212 &21202016
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -25,19 +25,19 @@ GameObject:
   m_Component:
   - 4: {fileID: 416100}
   - 50: {fileID: 5029454}
-  - 95: {fileID: 9577006}
   - 60: {fileID: 6076906}
   - 114: {fileID: 11476228}
   - 82: {fileID: 8298126}
   - 114: {fileID: 11429860}
   - 114: {fileID: 11480822}
+  - 95: {fileID: 9556138}
   m_Layer: 0
   m_Name: EasyEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &404938
 Transform:
   m_ObjectHideFlags: 1
@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 128650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 404938}
   m_Father: {fileID: 0}
@@ -178,7 +178,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &9577006
+--- !u!95 &9556138
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -237,7 +237,7 @@ MonoBehaviour:
   startDistanceToShoot: 5
   endDistanceToShoot: 8
   distanceFromPlayerAtStart: 9
-  m_bCanShoot: 0
+  m_bCanShoot: 1
 --- !u!212 &21257888
 SpriteRenderer:
   m_ObjectHideFlags: 1

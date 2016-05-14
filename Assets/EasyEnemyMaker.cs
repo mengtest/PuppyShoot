@@ -56,6 +56,7 @@ public class EasyEnemyMaker : MonoBehaviour {
         if(playerStatus.GetIsNOWPLAYING())
         {
             easyEnemyPoolobj = ObjectPooler.Dequeue(PoolKeys.EasyEnemys);
+            easyEnemyPoolobj.GetComponent<EasyEnemyController>().SetEnemyMaker(this);
             easyEnemyPoolobj.gameObject.SetActive(true);
             enemyCount++;
         }

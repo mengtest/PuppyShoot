@@ -46,7 +46,7 @@ public class EnemyStatus : MonoBehaviour {
 	
     void Update()
     {
-        IsOverTheDistance();
+        //IsOverTheDistance();
         OnDamage();
         DestoryEnemy();
     }
@@ -96,13 +96,15 @@ public class EnemyStatus : MonoBehaviour {
 
             //该敌人对象入池
             ObjectPooler.Enqueue(this.GetComponent<Poolable>());
+            //Destroy(this.gameObject);
 
         }
 
         if(State.DISAPPEAR == enemyState)
         {
             //该敌人对象入池
-            ObjectPooler.Enqueue(this.GetComponent<Poolable>());
+            //ObjectPooler.Enqueue(this.GetComponent<Poolable>());
+            Destroy(this.gameObject);
         }
         
     }

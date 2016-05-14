@@ -24,12 +24,14 @@ public class BlackBullet : MonoBehaviour
         StartMoving();
 	}
 
-    public void SetMoveDir(Vector3 moveDir,Vector3 startPosition)
+    public void SetMoveDir(float angle,Vector3 startPosition)
     {
-        this.moveDir = moveDir;
+        this.transform.position = startPosition;
+        this.transform.Rotate(new Vector3(0,0,angle));
         this.startPosition = startPosition;
         bStartMove = true;
     }
+
 
     void OnDisable()
     {
@@ -41,7 +43,7 @@ public class BlackBullet : MonoBehaviour
     {
         if(bStartMove)
         {
-            GetComponent<Rigidbody2D>().velocity = moveDir * speed * Time.deltaTime;
+            this.transform.Translate(new Vector3(-speed * Time.deltaTime, 0, 0));
         }
     }
 
