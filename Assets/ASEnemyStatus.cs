@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyStatus : MonoBehaviour {
+public class ASEnemyStatus : MonoBehaviour 
+{
 
-
-    public float breakingDistance = 20.0f;
+    public float breakingDistance = 8.0f;
     public int m_nEnemyHealth = 1;
     public AudioClip m_ExploreSound;
     public int m_EnemyScore = 100;
@@ -23,12 +23,12 @@ public class EnemyStatus : MonoBehaviour {
     }
 
     private State enemyState = State.INITIALIZE;
-	// Use this for initialization
-	void Start () 
+    // Use this for initialization
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag(Tags.Player);
         enemyState = State.ATTACK;
-	}
+    }
 
 
     void OnEnable()//从对象池取出SetActive(true)调用
@@ -42,8 +42,8 @@ public class EnemyStatus : MonoBehaviour {
         enemyState = State.ATTACK;
         m_nEnemyHealth = 1;
     }
-   
-	
+
+
     void Update()
     {
         IsOverTheDistance();
@@ -53,9 +53,9 @@ public class EnemyStatus : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag(Tags.Bullet))
+        if (other.gameObject.CompareTag(Tags.Bullet))
         {
-            if(other.gameObject.GetComponent<BulletBehaviour>().GetBulletOwner()== BulletBehaviour.BulletOwner.PLAYER)
+            if (other.gameObject.GetComponent<BulletBehaviour>().GetBulletOwner() == BulletBehaviour.BulletOwner.PLAYER)
             {
                 enemyState = State.TAKEDAMAGE;
             }
@@ -77,7 +77,7 @@ public class EnemyStatus : MonoBehaviour {
 
     void DestoryEnemy()
     {
-        if(enemyState ==  State.DESTORY)
+        if (enemyState == State.DESTORY && this.GetComponent<PolygonCollider2D>().enabled)
         {
             //播放爆炸声音
             AudioSource.PlayClipAtPoint(m_ExploreSound, this.gameObject.transform.position, 1.0f);
@@ -93,34 +93,36 @@ public class EnemyStatus : MonoBehaviour {
 
             //增加得分(给UI)
             this.PostNotification(Notifications.ADD_SCORE, new InfoEventArgs<int>(m_EnemyScore));
+            //先藏起来
+            this.GetComponent<PolygonCollider2D>().enabled = false;
+            this.GetComponentInChildren<SpriteRenderer>().enabled = false;
 
-            //该敌人对象入池
-            ObjectPooler.Enqueue(this.GetComponent<Poolable>());
-            //Destroy(this.gameObject);
+            //3秒后重生
+            StartCoroutine(ReLife());
 
         }
 
-        if(State.DISAPPEAR == enemyState)
+        if (State.DISAPPEAR == enemyState)
         {
             //该敌人对象入池
-            ObjectPooler.Enqueue(this.GetComponent<Poolable>());
-            //Destroy(this.gameObject);
+            //ObjectPooler.Enqueue(this.GetComponent<Poolable>());
+            Destroy(this.gameObject);
         }
-        
+
     }
 
 
     private void IsOverTheDistance()
     {
-        if(!player)
+        if (!player)
         {
             return;
         }
 
-        if(enemyState == State.ATTACK)
+        if (enemyState == State.ATTACK)
         {
-            float distance = Vector3.Distance(player.transform.position, transform.position);
-            if(distance > breakingDistance)
+            float distance =  this.transform.position.x - player.transform.position.x;
+            if (distance < -breakingDistance)
             {
                 enemyState = State.DISAPPEAR;
             }
@@ -132,5 +134,11 @@ public class EnemyStatus : MonoBehaviour {
         return State.ATTACK == enemyState;
     }
 
-   
+    IEnumerator ReLife()
+    {
+        yield return new WaitForSeconds(3.0f);
+        this.enemyState = State.ATTACK;
+        this.GetComponent<PolygonCollider2D>().enabled = true;
+        this.GetComponentInChildren<SpriteRenderer>().enabled = true;
+    }
 }

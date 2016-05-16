@@ -33,17 +33,18 @@ public class PlayerRocketMaker : MonoBehaviour {
         if (m_bStartFire)
         {
             m_bStartFire = false;
-            switch (playerRocketType)
-            {
-                case RocketType.NORMAL:
-                    FireNormalRocket();
-                    break;
-                case RocketType.MISSILE:
-                    FireMissile();
-                    break;
-                default:
-                    break;
-            }
+            FireNormalRocket();
+            //switch (playerRocketType)
+            //{
+            //    case RocketType.NORMAL:
+            //        FireNormalRocket();
+            //        break;
+            //    case RocketType.MISSILE:
+            //        FireMissile();
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
     }
 
@@ -60,16 +61,16 @@ public class PlayerRocketMaker : MonoBehaviour {
         rocketBehaviour.SetTargetPosition(enemy.transform.position);
     }
 
-    private void FireMissile()
-    {
-        bulletPoolableObj = ObjectPooler.Dequeue(PoolKeys.Missile);
-        MissileBehaviour missileBehaviour = bulletPoolableObj.GetComponent<MissileBehaviour>();
-        //rocketBehaviour.SetBulletOwner(BulletBehaviour.BulletOwner.PLAYER);
-        missileBehaviour.tag = Tags.Bullet;
-        missileBehaviour.SetBulletPosition(this.gameObject.transform.position);
-        missileBehaviour.gameObject.SetActive(true);
-        missileBehaviour.SetTarget(enemy);
-    }
+    //private void FireMissile()
+    //{
+    //    bulletPoolableObj = ObjectPooler.Dequeue(PoolKeys.Missile);
+    //    MissileBehaviour missileBehaviour = bulletPoolableObj.GetComponent<MissileBehaviour>();
+    //    //rocketBehaviour.SetBulletOwner(BulletBehaviour.BulletOwner.PLAYER);
+    //    missileBehaviour.tag = Tags.Bullet;
+    //    missileBehaviour.SetBulletPosition(this.gameObject.transform.position);
+    //    missileBehaviour.gameObject.SetActive(true);
+    //    missileBehaviour.SetTarget(enemy);
+    //}
 
     public void SetEnemy(GameObject enemy)
     {

@@ -10,7 +10,7 @@ public class AirPlane : MonoBehaviour
     public float throwInterval = 0.5f;
 
     private GameObject player;
-    private bool isPlayerInRange =  false;
+    //private bool isPlayerInRange =  false;
     private Bomb bombObj;
     private bool isThrowing = false;
 	// Use this for initialization

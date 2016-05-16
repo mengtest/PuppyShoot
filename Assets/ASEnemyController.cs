@@ -1,46 +1,30 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-public class EasyEnemyController : MonoBehaviour 
+public class ASEnemyController : MonoBehaviour 
 {
-    private EnemyStatus m_enemyStatus;
+    private ASEnemyStatus m_ASEnemyStatus;
     private GameObject player;
-    private EasyEnemyMaker easyEnemyMaker;
 
-    public float startDistanceToShoot = 15.0f;
+    public float startDistanceToShoot = 10.0f;
     //public float endDistanceToShoot = 8.0f;
     //public float distanceFromPlayerAtStart = 9.0f;
 
 
     public bool m_bCanShoot = false;
 
-        
-	// Use this for initialization
-	void Awake () 
+
+    // Use this for initialization
+    void Awake()
     {
-        m_enemyStatus = this.GetComponent<EnemyStatus>();
+        m_ASEnemyStatus = this.GetComponent<ASEnemyStatus>();
         player = GameObject.FindGameObjectWithTag(Tags.Player);
         SetCanShoot(true);
-	}
+    }
 
     void OnEnable()
     {
-        //处理出生位置相关点
-        if(!player||!easyEnemyMaker)
-        {
-            return;
-        }
-        // 初始化位置从Maker里面拿.
-        Vector3 spawnPos = easyEnemyMaker.GetSpawnPosition();
-        if (spawnPos != Vector3.zero)
-        {
-            transform.position = spawnPos;
-        }
-        else
-        {
-            this.gameObject.SetActive(false);
-        }
+       
     }
 
     void OnDisable()
@@ -48,13 +32,13 @@ public class EasyEnemyController : MonoBehaviour
         this.transform.position = Vector3.zero;
         this.transform.rotation = Quaternion.Euler(Vector3.zero);
     }
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
     void Update()
     {
         if (player)
         {
-            if (m_enemyStatus.GetIsAttack())
+            if (m_ASEnemyStatus.GetIsAttack())
             {
                 //移动相关逻辑ToDo
 
@@ -91,7 +75,7 @@ public class EasyEnemyController : MonoBehaviour
     private bool IsInRange(float startDistance)
     {
         float distance = Mathf.Abs(this.transform.position.x - player.transform.position.x);
-        
+
         return (distance <= startDistance);
     }
 
@@ -100,8 +84,4 @@ public class EasyEnemyController : MonoBehaviour
         this.m_bCanShoot = canShoot;
     }
 
-    public void SetEnemyMaker(EasyEnemyMaker maker)
-    {
-        this.easyEnemyMaker = maker;
-    }
 }
