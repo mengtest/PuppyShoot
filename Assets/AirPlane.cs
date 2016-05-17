@@ -3,8 +3,8 @@ using System.Collections;
 
 public class AirPlane : MonoBehaviour 
 {
-    private const float startMoveDis = 30.0f;
-    private const float disappearDis = 40.0f;
+    public float startMoveDis = 30.0f;
+    public float disappearDis = 40.0f;
     public float startThrowBombDis = 10.0f;
     public float airplaneSpeed = 5.0f;
     public float throwInterval = 0.5f;
