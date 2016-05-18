@@ -59,14 +59,14 @@ public class ASEnemyController : MonoBehaviour
     void IsFireDistace()
     {
         bool isFiring = false;
-        if (this.GetComponent<ShotMaker>())
+        if (this.GetComponent<ASShotMaker>())
         {
-            isFiring = this.GetComponent<ShotMaker>().GetIsFiring();
+            isFiring = this.GetComponent<ASShotMaker>().GetIsFiring();
             if (!isFiring)
             {
                 if (IsInRange(startDistanceToShoot))
                 {
-                    this.GetComponent<ShotMaker>().SetIsFiring();
+                    this.GetComponent<ASShotMaker>().SetIsFiring();
                 }
             }
         }

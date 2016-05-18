@@ -12,6 +12,10 @@ TagManager:
   - EasyEnemyMaker
   - CloudLightening
   - Wall
+  - Bomb
+  - FireStick
+  - BlackBullet
+  - Stone
   layers:
   - Default
   - TransparentFX

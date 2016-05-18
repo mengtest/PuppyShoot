@@ -10,5 +10,10 @@ public static class Tags
     public static string Player = "Player";
     public static string EasyEnemyMaker = "EasyEnemyMaker";
     public static string CloudLightening = "CloudLightening";
+    public static string Bomb = "Bomb";
+    public static string FireStick = "FireStick";
+    public static string BlackBullet = "BlackBullet";
+    public static string Stone = "Stone";
+    public static string Exit = "Exit";
 
 }

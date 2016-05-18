@@ -12,7 +12,8 @@ public class PlayerStatus : MonoBehaviour {
         PLAYERGETHURT,
         STARTDESTRUCTION,
         WAITING,
-        RESTART
+        RESTART,
+        SUCCEED
     }
 
     private State programState = State.INITIALIZE;
@@ -47,9 +48,17 @@ public class PlayerStatus : MonoBehaviour {
     {
         if(State.NOWPLAYING == programState)
         {
-            if(other.CompareTag(Tags.EnemyBullet))
+            string otherTag = other.tag;
+
+            if(Tags.EnemyBullet == otherTag || Tags.FireStick == otherTag || Tags.Bomb == otherTag ||
+                Tags.CloudLightening == otherTag || Tags.Stone == otherTag)
             {
                 programState = State.PLAYERGETHURT;
+            }
+
+            if(Tags.Exit == otherTag)
+            {
+                programState = State.SUCCEED;
             }
         }
     }
@@ -67,10 +76,10 @@ public class PlayerStatus : MonoBehaviour {
 
     private void PlayerGetHurt()
     {
-        //this.playerHealth--;
+        this.playerHealth--;
         if(playerHealth >= 0)
         {
-            //this.PostNotification(Notifications.LOSE_HEALTH);
+            this.PostNotification(Notifications.LOSE_HEALTH);
         }
     }
 
