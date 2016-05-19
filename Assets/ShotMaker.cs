@@ -7,13 +7,13 @@ public class ShotMaker : MonoBehaviour
     public float fireInterval = 3.0f;
     public int numberOfBullets = 10;
     
-    private GameObject player;
-    private PlayerStatus playerStatus;
+    public GameObject player;
+    public PlayerStatus playerStatus;
     private Poolable shotPoolableObj;
 
     private int fireCount;
-    private bool isFiring = false;
-    private bool isMakingBullet = false;
+    public bool isFiring = false;
+    public bool isMakingBullet = false;
 
     void OnEnable()
     {

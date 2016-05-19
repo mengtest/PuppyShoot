@@ -595,6 +595,14 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 324561861}
+    - target: {fileID: 11465784, guid: 2d1618a1f95f04c47b4357110e24b1ce, type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405726, guid: 2d1618a1f95f04c47b4357110e24b1ce, type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d1618a1f95f04c47b4357110e24b1ce, type: 2}
   m_IsPrefabParent: 0

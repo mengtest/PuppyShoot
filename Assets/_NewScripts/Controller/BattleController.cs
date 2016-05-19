@@ -7,6 +7,7 @@ public class BattleController: MonoBehaviour
 {
     public static BattleController instance;
     public GameObject loseMask;
+    public GameObject winMask;
 
     private PlayerStatus playerStatus;
 
@@ -21,13 +22,14 @@ public class BattleController: MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
     }
 
     void Start()
     {
         playerStatus = GameObject.FindGameObjectWithTag(Tags.Player).GetComponent<PlayerStatus>();
         loseMask.SetActive(false);
+        winMask.SetActive(false);
     }
 
 
@@ -39,6 +41,12 @@ public class BattleController: MonoBehaviour
             loseMask.SetActive(true);
             StartCoroutine(Replay());
         }
+
+        if(playerStatus.IsPlayerSucceed())
+        {
+            winMask.SetActive(true);
+            StartCoroutine(EndGame());
+        }
     }
 
     private IEnumerator Replay()
@@ -46,7 +54,14 @@ public class BattleController: MonoBehaviour
         yield return new WaitForSeconds(5.0f);
         //对象池物体先隐藏起来
         ObjectPooler.EnqueueAll();
-        Application.LoadLevel("Openning");
+        SceneManager.LoadScene("Opening");
+    }
+
+    private IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(5.0f);
+        ObjectPooler.EnqueueAll();
+        SceneManager.LoadScene("Ending");
     }
     
 

@@ -10,6 +10,7 @@ public class ScoreText : MonoBehaviour {
 
 	void Awake()
     {
+        this.RemoveObserver(Notifications.ADD_SCORE);
         this.AddObserver(Notifications.ADD_SCORE, OnAddScore);
     }
 

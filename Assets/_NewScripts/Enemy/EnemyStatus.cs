@@ -10,7 +10,7 @@ public class EnemyStatus : MonoBehaviour {
     public int m_EnemyScore = 100;
 
 
-    private GameObject player;
+    public GameObject player;
     private GameObject m_exploreEffect;
 
     private enum State

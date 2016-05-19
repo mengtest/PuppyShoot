@@ -17,7 +17,7 @@ public class LevelController : MonoBehaviour {
     public void StartGameSence()
     {
         
-        Application.LoadLevel("Battle");
+        SceneManager.LoadScene("Battle");
     }
 
     public void ExitGame()

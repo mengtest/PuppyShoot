@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class EasyEnemyController : MonoBehaviour 
 {
     private EnemyStatus m_enemyStatus;
-    private GameObject player;
-    private EasyEnemyMaker easyEnemyMaker;
+    public GameObject player;
+    //private EasyEnemyMaker easyEnemyMaker;
 
     public float startDistanceToShoot = 15.0f;
     //public float endDistanceToShoot = 8.0f;
@@ -100,8 +100,8 @@ public class EasyEnemyController : MonoBehaviour
         this.m_bCanShoot = canShoot;
     }
 
-    public void SetEnemyMaker(EasyEnemyMaker maker)
-    {
-        this.easyEnemyMaker = maker;
-    }
+    //public void SetEnemyMaker(EasyEnemyMaker maker)
+    //{
+    //    this.easyEnemyMaker = maker;
+    //}
 }

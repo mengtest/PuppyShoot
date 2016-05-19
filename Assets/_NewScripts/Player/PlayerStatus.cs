@@ -121,4 +121,9 @@ public class PlayerStatus : MonoBehaviour {
     {
         return m_bIsGameOver;
     }
+
+    public bool IsPlayerSucceed()
+    {
+        return programState == State.SUCCEED;
+    }
 }

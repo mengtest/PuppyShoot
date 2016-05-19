@@ -58,7 +58,7 @@ public class EasyEnemyMaker : MonoBehaviour {
         if(playerStatus.GetIsNOWPLAYING())
         {
             easyEnemyPoolobj = ObjectPooler.Dequeue(PoolKeys.EasyEnemys);
-            easyEnemyPoolobj.GetComponent<EasyEnemyController>().SetEnemyMaker(this);
+            //easyEnemyPoolobj.GetComponent<EasyEnemyController>().SetEnemyMaker(this);
             Vector3 spawnPos = GetSpawnPosition();
             if (spawnPos != Vector3.zero)
             {
@@ -68,6 +68,12 @@ public class EasyEnemyMaker : MonoBehaviour {
             {
                 easyEnemyPoolobj.gameObject.SetActive(false);
             }
+            easyEnemyPoolobj.gameObject.GetComponent<EasyEnemyController>().player = playerStatus.gameObject;
+            easyEnemyPoolobj.gameObject.GetComponent<EnemyStatus>().player = playerStatus.gameObject;
+            easyEnemyPoolobj.gameObject.GetComponent<ShotMaker>().player = playerStatus.gameObject;
+            easyEnemyPoolobj.gameObject.GetComponent<ShotMaker>().playerStatus = playerStatus;
+            easyEnemyPoolobj.gameObject.GetComponent<ShotMaker>().isFiring = false;
+            easyEnemyPoolobj.gameObject.GetComponent<ShotMaker>().isMakingBullet = false;
             easyEnemyPoolobj.gameObject.SetActive(true);
             enemyCount++;
         }
@@ -81,7 +87,7 @@ public class EasyEnemyMaker : MonoBehaviour {
             for(int i = 0 ;i <spawnPositions.Count;++i)
             {
                 easyEnemyPoolobj = ObjectPooler.Dequeue(PoolKeys.EasyEnemys);
-                easyEnemyPoolobj.GetComponent<EasyEnemyController>().SetEnemyMaker(this);
+                //easyEnemyPoolobj.GetComponent<EasyEnemyController>().SetEnemyMaker(this);
                 Vector3 spawnPos = GetSpawnPosition();
                 if (spawnPos != Vector3.zero)
                 {
@@ -91,6 +97,12 @@ public class EasyEnemyMaker : MonoBehaviour {
                 {
                     easyEnemyPoolobj.gameObject.SetActive(false);
                 }
+                easyEnemyPoolobj.gameObject.GetComponent<EasyEnemyController>().player = playerStatus.gameObject;
+                easyEnemyPoolobj.gameObject.GetComponent<EnemyStatus>().player = playerStatus.gameObject;
+                easyEnemyPoolobj.gameObject.GetComponent<ShotMaker>().player = playerStatus.gameObject;
+                easyEnemyPoolobj.gameObject.GetComponent<ShotMaker>().playerStatus = playerStatus;
+                easyEnemyPoolobj.gameObject.GetComponent<ShotMaker>().isFiring = false;
+                easyEnemyPoolobj.gameObject.GetComponent<ShotMaker>().isMakingBullet = false;
                 easyEnemyPoolobj.gameObject.SetActive(true);
                 enemyCount++;
             }

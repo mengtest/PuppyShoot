@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 
@@ -15,6 +16,17 @@ public class EndingScrollController : MonoBehaviour
 	void Start()
     {
         this.gameObject.transform.position = new Vector3(this.transform.position.x ,startPosition,0);
+    }
+
+    void Update()
+    {
+        if(!broll)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                SceneManager.LoadScene("Opening");
+            }
+        }
     }
 	
     void FixedUpdate()
