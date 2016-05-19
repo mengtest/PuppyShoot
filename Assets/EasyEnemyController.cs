@@ -26,21 +26,21 @@ public class EasyEnemyController : MonoBehaviour
 
     void OnEnable()
     {
-        //处理出生位置相关点
-        if(!player||!easyEnemyMaker)
-        {
-            return;
-        }
-        // 初始化位置从Maker里面拿.
-        Vector3 spawnPos = easyEnemyMaker.GetSpawnPosition();
-        if (spawnPos != Vector3.zero)
-        {
-            transform.position = spawnPos;
-        }
-        else
-        {
-            this.gameObject.SetActive(false);
-        }
+        ////处理出生位置相关点
+        //if(!player||!easyEnemyMaker)
+        //{
+        //    return;
+        //}
+        //// 初始化位置从Maker里面拿.
+        //Vector3 spawnPos = easyEnemyMaker.GetSpawnPosition();
+        //if (spawnPos != Vector3.zero)
+        //{
+        //    transform.position = spawnPos;
+        //}
+        //else
+        //{
+        //    this.gameObject.SetActive(false);
+        //}
     }
 
     void OnDisable()

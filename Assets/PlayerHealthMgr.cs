@@ -8,19 +8,21 @@ public class PlayerHealthMgr : MonoBehaviour {
     
     private GameObject m_PlayerHealthBar;
     private PlayerStatus m_PlayerStatus;
-    private List<GameObject> m_listHeartIcons = new List<GameObject>();
+    public List<GameObject> m_listHeartIcons = new List<GameObject>();
     
     void Awake()
     {
         m_PlayerHealthBar = GameObject.Find("PlayerHealthBar");
         m_PlayerStatus = GameObject.FindGameObjectWithTag(Tags.Player).GetComponent<PlayerStatus>();
+        this.RemoveObserver(Notifications.LOSE_HEALTH);
+        this.RemoveObserver(Notifications.GET_HEAL);
         this.AddObserver(Notifications.GET_HEAL, OnGetHeal);
         this.AddObserver(Notifications.LOSE_HEALTH, OnLoseHealth);
     }
 
     void Start()
     {
-        InitHealthBar();
+        //InitHealthBar();
     }
 
     void OnDestory()
@@ -45,11 +47,11 @@ public class PlayerHealthMgr : MonoBehaviour {
     {
         for(int i = 0 ; i < m_listHeartIcons.Count ; ++ i)
         {
-            m_listHeartIcons[i].gameObject.SetActive(false);
+            m_listHeartIcons[i].gameObject.GetComponent<Image>().enabled = false;
         }
         for(int i = 0 ; i < m_PlayerStatus.playerHealth ; ++ i)
         {
-            m_listHeartIcons[i].gameObject.SetActive(true);
+            m_listHeartIcons[i].gameObject.GetComponent<Image>().enabled = true;
         }
     }
 
@@ -58,12 +60,12 @@ public class PlayerHealthMgr : MonoBehaviour {
         foreach(Transform child in m_PlayerHealthBar.transform)
         {
             m_listHeartIcons.Add(child.gameObject);
-            child.gameObject.SetActive(false);
+            child.gameObject.GetComponent<Image>().enabled = false;
         }
 
         for(int i = 0 ; i < m_PlayerStatus.playerHealth ; ++ i)
         {
-            m_listHeartIcons[i].gameObject.SetActive(true);
+            m_listHeartIcons[i].gameObject.GetComponent<Image>().enabled = true;
         }
     }
 }

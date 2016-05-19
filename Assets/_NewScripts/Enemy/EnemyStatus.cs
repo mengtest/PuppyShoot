@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyStatus : MonoBehaviour {
 
 
-    public float breakingDistance = 20.0f;
+    public float breakingDistance = 40.0f;
     public int m_nEnemyHealth = 1;
     public AudioClip m_ExploreSound;
     public int m_EnemyScore = 100;

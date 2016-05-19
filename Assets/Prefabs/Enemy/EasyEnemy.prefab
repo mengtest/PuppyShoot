@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83dfdc0362786cd458eb21c004d3807e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakingDistance: 20
+  breakingDistance: 40
   m_nEnemyHealth: 1
   m_ExploreSound: {fileID: 8300000, guid: 17e2e18f58d484292afebd263b8a9f67, type: 3}
   m_EnemyScore: 100

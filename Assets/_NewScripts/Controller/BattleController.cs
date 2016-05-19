@@ -1,67 +1,53 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class BattleController: MonoBehaviour
 {
-    //private Coroutine MoveCoroutine = null;
+    public static BattleController instance;
+    public GameObject loseMask;
+
+    private PlayerStatus playerStatus;
+
 
     void Awake()
     {
-        //this.AddObserver(Notifications.PLAYER_MOVE, PlayerMove);
-        this.AddObserver(Notifications.SHOOT_ENEMY,ShootEnemy);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        DontDestroyOnLoad(this.gameObject);
     }
 
+    void Start()
+    {
+        playerStatus = GameObject.FindGameObjectWithTag(Tags.Player).GetComponent<PlayerStatus>();
+        loseMask.SetActive(false);
+    }
+
+
+    void Update()
+    {
+        if(playerStatus.IsGameOver())
+        {
+            //若玩家被撸死了,留跳出Lose并且5秒后回到游戏主界面,哈哈哈
+            loseMask.SetActive(true);
+            StartCoroutine(Replay());
+        }
+    }
+
+    private IEnumerator Replay()
+    {
+        yield return new WaitForSeconds(5.0f);
+        //对象池物体先隐藏起来
+        ObjectPooler.EnqueueAll();
+        Application.LoadLevel("Openning");
+    }
     
-    void OnDestroy()
-    {
-        //this.RemoveObserver(Notifications.PLAYER_MOVE);
-        this.RemoveObserver(Notifications.SHOOT_ENEMY);
-    }
 
-
-    //void PlayerMove(object sender, EventArgs e)
-    //{
-    //    if (MoveCoroutine != null)
-    //    {
-    //        StopCoroutine(MoveCoroutine);
-    //    }
-
-    //    GameObject player = sender as GameObject;
-
-    //    InfoEventArgs<Vector3> pointEvent = (InfoEventArgs<Vector3>)e;
-
-    //    Vector3 target = pointEvent.info;
-
-    //    MoveCoroutine = StartCoroutine(MoveTo(player, target));
-    //}
-
-
-    void ShootEnemy(object sender, EventArgs e)
-    {
-        InfoEventArgs<Vector3> enemyPos = (InfoEventArgs<Vector3>) e;
-        GameObject shooter =sender as GameObject;
-        
-        Vector3 shooterPos = shooter.transform.position;
-        Vector3 enemyPosition = enemyPos.info;
-        
-        Poolable obj=ObjectPooler.Dequeue(PoolKeys.Bullets);
-        obj.transform.localPosition = shooterPos;
-        
-        PlayerBullet playerBullet = obj.gameObject.AddComponent<PlayerBullet>();
-        playerBullet.TargetPosition = enemyPosition;
-        
-        obj.gameObject.SetActive(true);
-        playerBullet.Shoot();
-        
-        Debug.Log(shooterPos+"ShootEnemy"+enemyPosition);
-    }
-
-
-    void UpdateScore(object sender, EventArgs e)
-    {
-        
-    }
-
-    
 }

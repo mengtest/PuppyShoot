@@ -15,7 +15,6 @@ public class EasyEnemyMaker : MonoBehaviour {
     public SpawnType spawnType;
     private PlayerStatus playerStatus;
     private int enemyCount = 0;
-    private int destoryEnemyCount;
     private int maxEnemyCount = 10;
     private bool isMaking = false;
 
@@ -60,6 +59,15 @@ public class EasyEnemyMaker : MonoBehaviour {
         {
             easyEnemyPoolobj = ObjectPooler.Dequeue(PoolKeys.EasyEnemys);
             easyEnemyPoolobj.GetComponent<EasyEnemyController>().SetEnemyMaker(this);
+            Vector3 spawnPos = GetSpawnPosition();
+            if (spawnPos != Vector3.zero)
+            {
+                easyEnemyPoolobj.gameObject.transform.position = spawnPos;
+            }
+            else
+            {
+                easyEnemyPoolobj.gameObject.SetActive(false);
+            }
             easyEnemyPoolobj.gameObject.SetActive(true);
             enemyCount++;
         }
@@ -74,6 +82,15 @@ public class EasyEnemyMaker : MonoBehaviour {
             {
                 easyEnemyPoolobj = ObjectPooler.Dequeue(PoolKeys.EasyEnemys);
                 easyEnemyPoolobj.GetComponent<EasyEnemyController>().SetEnemyMaker(this);
+                Vector3 spawnPos = GetSpawnPosition();
+                if (spawnPos != Vector3.zero)
+                {
+                    easyEnemyPoolobj.gameObject.transform.position = spawnPos;
+                }
+                else
+                {
+                    easyEnemyPoolobj.gameObject.SetActive(false);
+                }
                 easyEnemyPoolobj.gameObject.SetActive(true);
                 enemyCount++;
             }

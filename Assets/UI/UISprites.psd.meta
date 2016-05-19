@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 84b4e321854691549903de8ab1ad4747
-timeCreated: 1433998798
-licenseType: Free
+timeCreated: 1463574387
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: UI_Button
     21300002: UI_Title
+    21300004: UISprites_0
+    21300006: UISprites_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -19,7 +21,7 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
@@ -39,11 +41,12 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
@@ -51,17 +54,37 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: UI_Button
+    - name: UISprites_0
       rect:
         serializedVersion: 2
         x: 39
         y: 720
         width: 250
-        height: 250
+        height: 251
       alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 20, y: 20, z: 20, w: 20}
-    - name: UI_Title
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 17, y: 17, z: 17, w: 17}
+      outline:
+      - - {x: 122, y: -118.5}
+        - {x: 125, y: -111.5}
+        - {x: 125, y: 111.5}
+        - {x: 123, y: 116.5}
+        - {x: 116, y: 122.5}
+        - {x: 113, y: 124.5}
+        - {x: 107, y: 125.5}
+        - {x: -110, y: 125.5}
+        - {x: -115, y: 123.5}
+        - {x: -117, y: 121.5}
+        - {x: -122, y: 117.5}
+        - {x: -125, y: 110.5}
+        - {x: -125, y: -112.5}
+        - {x: -124, y: -115.5}
+        - {x: -114, y: -124.5}
+        - {x: -110, y: -125.5}
+        - {x: 110, y: -125.5}
+        - {x: 114, y: -124.5}
+        - {x: 117, y: -122.5}
+    - name: UISprites_1
       rect:
         serializedVersion: 2
         x: 327
@@ -69,8 +92,37 @@ TextureImporter:
         width: 661
         height: 173
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 260.5, y: -71.5}
+        - {x: 302.5, y: -79.5}
+        - {x: 329.5, y: -73.5}
+        - {x: 330.5, y: -69.5}
+        - {x: 330.5, y: -35.5}
+        - {x: 303.5, y: 13.5}
+        - {x: 275.5, y: 22.5}
+        - {x: 225.5, y: 26.5}
+        - {x: 124.5, y: 50.5}
+        - {x: 121.5, y: 77.5}
+        - {x: 98.5, y: 86.5}
+        - {x: 21.5, y: 86.5}
+        - {x: -34.5, y: 60.5}
+        - {x: -141.5, y: 49.5}
+        - {x: -229.5, y: 28.5}
+        - {x: -265.5, y: 45.5}
+        - {x: -302.5, y: 12.5}
+        - {x: -327.5, y: -38.5}
+        - {x: -330.5, y: -45.5}
+        - {x: -330.5, y: -76.5}
+        - {x: -305.5, y: -83.5}
+        - {x: -275.5, y: -66.5}
+        - {x: -235.5, y: -76.5}
+        - {x: -189.5, y: -86.5}
+        - {x: -11.5, y: -86.5}
+        - {x: 8.5, y: -62.5}
+        - {x: 91.5, y: -59.5}
+    outline: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

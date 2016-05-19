@@ -143,5 +143,16 @@ public class ObjectPooler : MonoBehaviour
         p.key = key;
         return p;
     }
-    
+
+    public static void EnqueueAll()
+    {
+        Poolable[] poolables = Instance.transform.GetComponentsInChildren<Poolable>();
+
+        foreach(Poolable pos in poolables)
+        {
+            pos.isPooled = true;
+            pos.transform.SetParent(Instance.transform);
+            pos.gameObject.SetActive(false);
+        }
+    }
 }

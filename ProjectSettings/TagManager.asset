@@ -16,6 +16,7 @@ TagManager:
   - FireStick
   - BlackBullet
   - Stone
+  - Exit
   layers:
   - Default
   - TransparentFX
