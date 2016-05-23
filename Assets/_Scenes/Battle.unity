@@ -360,6 +360,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11491938, guid: ce5aee0a49966e84985d466e27ed9850, type: 2}
+      propertyPath: startDistanceToShoot
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473326, guid: ce5aee0a49966e84985d466e27ed9850, type: 2}
+      propertyPath: startDistanceToShoot
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11459922, guid: ce5aee0a49966e84985d466e27ed9850, type: 2}
+      propertyPath: startDistanceToShoot
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11458878, guid: ce5aee0a49966e84985d466e27ed9850, type: 2}
+      propertyPath: startDistanceToShoot
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437108, guid: ce5aee0a49966e84985d466e27ed9850, type: 2}
+      propertyPath: spawnPositions.Array.data[2].x
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11437108, guid: ce5aee0a49966e84985d466e27ed9850, type: 2}
+      propertyPath: spawnPositions.Array.data[3].x
+      value: -4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce5aee0a49966e84985d466e27ed9850, type: 2}
   m_IsPrefabParent: 0
@@ -539,21 +563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad8b224414da84d49b9b8d7f54bb5297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1268019105 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 158418, guid: ce5aee0a49966e84985d466e27ed9850, type: 2}
-  m_PrefabInternal: {fileID: 318930337}
---- !u!114 &1268019110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1268019105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 687890611481ca341bf9d97fce3438e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1338399192
 Prefab:
   m_ObjectHideFlags: 0
@@ -596,6 +605,10 @@ Prefab:
     - target: {fileID: 11439646, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
       propertyPath: playerHealth
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5818310, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d84d1472bc361b47a2deb55c01a9fca, type: 2}

@@ -1173,7 +1173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &120646
 GameObject:
   m_ObjectHideFlags: 1
@@ -1653,7 +1653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &130398
 GameObject:
   m_ObjectHideFlags: 1
@@ -2584,7 +2584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &154000
 GameObject:
   m_ObjectHideFlags: 1
@@ -2834,6 +2834,7 @@ GameObject:
   - 212: {fileID: 21293628}
   - 95: {fileID: 9544356}
   - 61: {fileID: 6113944}
+  - 114: {fileID: 11403808}
   m_Layer: 0
   m_Name: BlackHole
   m_TagString: Exit
@@ -3696,7 +3697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &178120
 GameObject:
   m_ObjectHideFlags: 1
@@ -5234,7 +5235,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26, y: 5, z: 0}
+  m_LocalPosition: {x: 26, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424564}
@@ -5572,7 +5573,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 132310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26, y: 3, z: 0}
+  m_LocalPosition: {x: 26, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424564}
@@ -6570,7 +6571,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102476}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: 5, z: 0}
+  m_LocalPosition: {x: 25, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424564}
@@ -6797,7 +6798,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 126054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: 3, z: 0}
+  m_LocalPosition: {x: 25, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 424564}
@@ -12000,6 +12001,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11403808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687890611481ca341bf9d97fce3438e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11405250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12035,7 +12047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49261d732840194b9dd906e1731acd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakingDistance: 20
+  breakingDistance: 7
   m_nEnemyHealth: 1
   m_ExploreSound: {fileID: 8300000, guid: 17e2e18f58d484292afebd263b8a9f67, type: 3}
   m_EnemyScore: 100
@@ -12074,7 +12086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49261d732840194b9dd906e1731acd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakingDistance: 20
+  breakingDistance: 7
   m_nEnemyHealth: 1
   m_ExploreSound: {fileID: 8300000, guid: 17e2e18f58d484292afebd263b8a9f67, type: 3}
   m_EnemyScore: 100
@@ -12438,7 +12450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26746102abff368458a1934c7296ceac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDistanceToShoot: 15
+  startDistanceToShoot: 6
   m_bCanShoot: 0
 --- !u!114 &11459584
 MonoBehaviour:
@@ -12451,7 +12463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49261d732840194b9dd906e1731acd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakingDistance: 20
+  breakingDistance: 7
   m_nEnemyHealth: 1
   m_ExploreSound: {fileID: 8300000, guid: 17e2e18f58d484292afebd263b8a9f67, type: 3}
   m_EnemyScore: 100
@@ -12466,7 +12478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26746102abff368458a1934c7296ceac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDistanceToShoot: 15
+  startDistanceToShoot: 6
   m_bCanShoot: 0
 --- !u!114 &11460122
 MonoBehaviour:
@@ -12541,8 +12553,6 @@ MonoBehaviour:
   - {x: 4, y: 4, z: 0}
   - {x: 4, y: -4, z: 0}
   - {x: 4, y: 0, z: 0}
-  - {x: 0, y: -4, z: 0}
-  - {x: 0, y: 4, z: 0}
 --- !u!114 &11473326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12554,7 +12564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26746102abff368458a1934c7296ceac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDistanceToShoot: 15
+  startDistanceToShoot: 6
   m_bCanShoot: 0
 --- !u!114 &11479730
 MonoBehaviour:
@@ -12595,7 +12605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26746102abff368458a1934c7296ceac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDistanceToShoot: 15
+  startDistanceToShoot: 6
   m_bCanShoot: 0
 --- !u!114 &11496288
 MonoBehaviour:
@@ -12620,7 +12630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c49261d732840194b9dd906e1731acd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakingDistance: 20
+  breakingDistance: 7
   m_nEnemyHealth: 1
   m_ExploreSound: {fileID: 8300000, guid: 17e2e18f58d484292afebd263b8a9f67, type: 3}
   m_EnemyScore: 100

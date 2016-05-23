@@ -50,17 +50,17 @@ public class PlayerStatus : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(State.NOWPLAYING == programState)
+        if (State.NOWPLAYING == programState)
         {
             string otherTag = other.tag;
 
-            if(Tags.EnemyBullet == otherTag || Tags.FireStick == otherTag || Tags.Bomb == otherTag ||
+            if (Tags.EnemyBullet == otherTag || Tags.FireStick == otherTag || Tags.Bomb == otherTag ||
                 Tags.CloudLightening == otherTag || Tags.Stone == otherTag)
             {
                 programState = State.PLAYERGETHURT;
             }
 
-            if(Tags.Exit == otherTag)
+            if (Tags.Exit == otherTag)
             {
                 programState = State.SUCCEED;
             }

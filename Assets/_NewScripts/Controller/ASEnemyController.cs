@@ -67,7 +67,7 @@ public class ASEnemyController : MonoBehaviour
                 if (IsInRange(startDistanceToShoot))
                 {
                     this.GetComponent<ASShotMaker>().SetIsFiring();
-                }
+                }               
             }
         }
     }
